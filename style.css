@@ -1,0 +1,44 @@
+html{
+    margin: 0;
+    min-height: 100%;
+}
+
+body{
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(32, 32, 32), rgb(29, 28, 28), rgb(0, 0, 0));
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20vh;
+    border: solid;
+    border-width: 3px;
+    border-radius: 50px;
+    padding-bottom: 10vh;
+    background-image: linear-gradient(rgb(56, 1, 63), rgb(13, 1, 59), rgb(0, 32, 70), rgb(13, 1, 59), rgb(56, 1, 63));
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#title{
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.781);
+}
+
+.os{
+    display: grid;
+}
+
+#cat{
+    grid-area: 1 / 1;
+    z-index: 2;
+}
+
+#bg{
+    grid-area: 1 / 1;
+    z-index: 1;
+}
