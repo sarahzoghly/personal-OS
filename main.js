@@ -65,6 +65,8 @@ btn2.addEventListener('click', () => {
     }
 });
 
+setInterval(updatetime, 1000);
+dragElement(document.getElementById("warning"));
 
 function welcome(){
     document.querySelectorAll(".os").forEach(section => section.style.display = "none");
@@ -76,7 +78,11 @@ function os(){
     document.querySelectorAll(".os").forEach(section => section.style.display = "grid");  
 }
 
-dragElement(document.getElementById("warning"));
+function updatetime(){
+    var currentTime = new Date().toLocaleString();
+    var timeText = document.querySelector("#time");
+    timeText.innerHTML = currentTime;
+}
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

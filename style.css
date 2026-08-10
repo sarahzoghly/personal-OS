@@ -128,6 +128,7 @@ body{
 
 .bar{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     position: absolute;
     width: 100%;
@@ -154,6 +155,12 @@ body{
     margin: 1vh;
 }
 
+#time{
+    margin-right: 1.5vh;
+    text-decoration: underline;
+    color: rgb(26, 25, 25);
+}
+
 .screen{
     display: flex;
     justify-content: center;
@@ -176,7 +183,7 @@ body{
     padding: 30px;
     cursor: move;
     background-color: #050505ce;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.781);
 }
 
 #warning-content{
