@@ -110,6 +110,8 @@ body{
 #cat{
     grid-area: 1 / 1;
     z-index: 2;
+    height: 23vh;
+    width:23vh;
     margin: auto;  
     margin-top: 40vh;
     border: solid;
@@ -234,13 +236,13 @@ body{
     gap: 15px; 
 }
 
-#welcome-app{
+.program{
     background-color: transparent;
     border-color: transparent;
     position: relative;
 }
 
-#welcome-app:hover{
+.program:hover{
     background-color: rgba(34, 34, 34, 0.637);
 }
 
@@ -253,6 +255,8 @@ body{
     position: absolute;
     background-color: rgba(255, 255, 255, 0.781);
     overflow:auto;
+    scrollbar-color: rgb(26, 25, 25) rgba(190, 190, 190, 0.781);
+    scrollbar-width: thin;
 }
 
 #appheader{
@@ -260,6 +264,14 @@ body{
     cursor: move;
     background-color: #050505ce;
     color: rgba(255, 255, 255, 0.781);
+    display: flex;
+    flex-direction: row;
+    gap: 500px;
+    align-items: center;
+}
+
+#headertext{
+    font-size: 1.5rem;
 }
 
 #app-content{
@@ -274,10 +286,115 @@ body{
 
 .close{
     font-family: 'Pixelify Sans', sans-serif;
+    height: 20px;
+    width: 20px;
 }
 
-#app-title{
+#app-texttitle{
     text-align: center;
     width: 100%;
     font-size: 3rem;
+}
+
+#app-maintext{
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+}
+
+#cat-with-eyes-app{
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.chatapp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#right_side{
+    height: 100%;
+    border: solid;
+    border-radius: 10px;
+    border-color: rgb(26, 25, 25);
+    background-color: rgba(34, 33, 33, 0.295);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.chat-container{
+    display: flex;
+    height: 100%;
+    width: 70%;
+    border: solid;
+    margin-left: 20px;
+    border-radius: 10px;
+    border-color: rgb(26, 25, 25);
+    background-color: rgba(34, 33, 33, 0.295);
+    flex-direction: column;
+}
+
+.input-area{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding: 10px;
+}
+
+#user-input{
+    background: none;
+    border: thin solid rgba(255, 255, 255, 0.781);
+    border-radius: 10px;
+    height: 5vh;
+    width: 20vw;
+    padding-left: 10px;
+    color: rgba(0, 0, 0);
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#send-btn{
+    background: none;
+    border: thin solid rgba(255, 255, 255, 0.781);
+    border-radius: 10px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1rem;
+}
+
+#send-btn:hover{
+    background-color:rgba(0, 0, 0, 0.205); 
+}
+
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-message{
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    word-wrap: break-word;
+}
+
+.bot-message{
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background-color: rgba(29, 29, 29, 0.1);
+    word-wrap: break-word;
 }

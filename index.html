@@ -32,7 +32,7 @@
                 <img src = "images/bg.jpeg" alt = "bg" height="100%" width="100%">
             </div>  
             <div id="cat">
-                <img src ="images/cat.gif" alt = "cat" height="140px", width="140px">
+                <img src ="images/cat.gif" alt = "cat" height="140px", width="140px" id="cat_bg">
             </div>
         </div>
         <div class="bar">
@@ -53,13 +53,16 @@
                 </div>
             </div>
         <div class="apps" id="column1">
-            <button id="welcome-app"><img src="images/info.png" height="50px"></button>
+            <button id="welcome-app" class="program"><img src="images/info.png" height="50px"></button>
+            <button id="catchat" class="program"><img src="images/chat-bubble.png" height="50px"></button>
         </div>
         <div class="app" id="app">
             <div id="appheader">
                 <button class="close">X</button>
+                <p id="headertext"></p>
             </div>
-            <div id="app-content"></div>
+            <div id="app-content">
+            </div>
         </div>
     </div>
 <script src="main.js"></script>

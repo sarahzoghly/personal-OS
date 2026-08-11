@@ -4,6 +4,8 @@ const btn1 = document.getElementById('warning-bt1');
 const btn2 = document.getElementById('warning-bt2');
 const close_btn = document.querySelectorAll('.close');
 const info_app = document.querySelectorAll('#welcome-app');
+const catchat = document.querySelectorAll('#catchat');
+const cat = document.querySelectorAll('#cat-with-eyes-app');
 let entered_os = false;
 let btn1_clicked = false;
 let btn2_clicked = false;
@@ -11,6 +13,7 @@ let warning = "";
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
 document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
 document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
 document.body.style.overflow = 'hidden';
 
 os_button.addEventListener('click', () => {
@@ -21,13 +24,75 @@ os_button.addEventListener('click', () => {
 close_btn.forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+        document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
     });
 });
 
 info_app.forEach(app => {
     app.addEventListener('click', () => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
-        document.querySelector("#app-content").innerHTML = `<p id="app-title"> Hi! That is the first version of my OS. I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px">`;
+        document.querySelector("#app-content").innerHTML = `<p id="app-texttitle">Hi! That is the first version of my OS!</p> <p id="app-maintext">I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px">`;
+        document.querySelector("#headertext").innerHTML = `Info`
+    });
+});
+
+catchat.forEach(app => {
+    app.addEventListener('click', () => {
+        document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
+        document.querySelector("#app-content").innerHTML = `
+        <div class="chatapp">
+            <div class="chat-container">
+                <div id="messages" class="messages"></div>
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Type a message...">
+                    <button id="send-btn">Send</button>
+                </div>
+            </div>
+            <div id="right_side">
+                <button id="cat-with-eyes-app"><img src="images/cat_happy.gif" alt="image" height="250px" width="250px"></button>
+            </div>
+        </div>
+        `;
+        document.querySelector("#headertext").innerHTML = `CatChat`
+        document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
+    
+        const user_input = document.getElementById('user-input');
+        const send_btn = document.getElementById('send-btn');
+        const messages_container = document.getElementById('messages');
+        const textList = ["...", "Meow~", "MEOW", "Meow Meow", "Meow", "meow?", "Mmmmeow!", "*sniff sniff*", "*ignores you*", "meow meow meow meow meow meow, mow meow; meow meow 'MEOW' m e o w. Meow meow meow, meow!"];
+        const catBtn = document.getElementById('cat-with-eyes-app');
+
+        send_btn.addEventListener('click', () => {
+            send_message(user_input, messages_container, textList[Math.floor(Math.random() * textList.length)]);
+            catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+            setTimeout(() => {
+                catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+            }, 1000);
+        });
+        user_input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                send_message(user_input, messages_container, textList[Math.floor(Math.random() * textList.length)]);
+                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                setTimeout(() => {
+                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                }, 1000);
+            }
+        });
+        catBtn.addEventListener('click', () => {
+            catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+            setTimeout(() => {
+                catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+            }, 1000);
+        });
+    });
+});
+
+cat.forEach(catBtn => {
+    catBtn.addEventListener('click', () => {
+        catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+        setTimeout(() => {
+            catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+        }, 1000);
     });
 });
 
@@ -133,4 +198,28 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
+}
+
+function send_message(message, container, bot){
+    const trimmed = message.value.trim();
+    if (trimmed === '') return;   
+
+    const message_el = document.createElement('p');
+    message_el.textContent = trimmed;
+    message_el.classList.add('user-message');
+
+    container.appendChild(message_el);
+
+    const botmessage_el = document.createElement('p');
+    botmessage_el.innerHTML = `<img src="images/typing.gif" alt="typing..." height="6px" width="20px">`;
+    botmessage_el.classList.add('bot-message');
+    container.appendChild(botmessage_el);
+
+    message.value = '';
+    container.scrollTop = container.scrollHeight;
+
+    setTimeout(() => {
+        botmessage_el.textContent = bot;
+        container.scrollTop = container.scrollHeight;
+    }, 600);
 }
