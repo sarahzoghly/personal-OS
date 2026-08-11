@@ -22,26 +22,19 @@ body{
 
 #title{
     font-size: 4rem;
-    color: rgba(255, 255, 255, 0.781);
+    color: rgba(255, 255, 255, 0.8);
     position: relative;
-    bottom: 30px;
-    left: 70px;
-}
-
-#os_cl{
-    color: rgba(255, 255, 255, 0.945);
 }
 
 #cat-with-eyes{
     position: relative;
-    left: 500px;
-    bottom: -10px;
+    left: 40vw;
 }
 
 .pupil {
     position: absolute;
-    width: 20px;
-    height: 50px;
+    width: 1.5vw;
+    height: 10vh;
     border-radius: 50%;
     background-image: linear-gradient(to top, rgb(17, 17, 17), rgb(0, 0, 0), rgb(0, 0, 0));
     border: thin solid;
@@ -49,8 +42,8 @@ body{
 
 #sign{
     position: relative;
-    bottom: 200px;
-    right: 400px;
+    bottom: 35vh;
+    right: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,42 +52,42 @@ body{
 
 #pass-field{
     background: none;
-    border: thin solid rgba(255, 255, 255, 0.781);
+    border: thin solid rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     height: 5vh;
     width: 20vw;
     padding-left: 10px;
-    color: rgba(255, 255, 255, 0.781);
+    color: rgba(255, 255, 255, 0.8);
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 1rem;
 }
 
 #enter-os{
     background: none;
-    border: thin solid rgba(255, 255, 255, 0.781);
+    border: thin solid rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     height: 7vh;
     width: 10vw;
-    color:rgba(255, 255, 255, 0.781);
+    color:rgba(255, 255, 255, 0.8);
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 1rem;
     margin-top: 2vh;
 }
 
 #enter-os:hover{
-    color:rgba(107, 106, 106, 0.781);
-    background-color: rgba(0, 0, 0, 0.068);
+    color:rgba(107, 106, 106, 0.8);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 #pass-title{
     position: relative;
-    right: 95px;
-    color:rgba(255, 255, 255, 0.781);
+    right: 7vw;
+    color:rgba(255, 255, 255, 0.8);
     font-size: 1.2rem;
 }
 
 #pass-note{
-    color:rgba(168, 168, 168, 0.781);
+    color:rgba(168, 168, 168, 0.8);
     font-size: 0.7rem;
     text-decoration: underline;
 }
@@ -115,7 +108,7 @@ body{
     grid-area: 1 / 1;
     z-index: 2;
     height: 23vh;
-    width:23vh;
+    width:10vw;
     margin: auto;  
     margin-top: 40vh;
     border: solid;
@@ -140,21 +133,21 @@ body{
     width: 100%;
     height: 8vh;
     backdrop-filter: blur(10px);
-    background-color: rgba(116, 116, 116, 0.164);
+    background-color: rgba(116, 116, 116, 0.2);
     z-index: 4;
 }
 
 #logout{
-    border:rgba(255, 255, 255, 0.781);
+    border:rgba(255, 255, 255, 0.8);
     border-radius: 100px;
     height: 6vh;
-    width: 6vh;
+    width: 3vw;
     margin: 1vh;
-    background-color: rgba(5, 5, 5, 0.267);
+    background-color: rgba(5, 5, 5, 0.3);
 }
 
 #logout:hover{
-    background-color: rgba(5, 5, 5, 0.637);
+    background-color: rgba(5, 5, 5, 0.8);
 }
 
 #logout-img{
@@ -164,7 +157,7 @@ body{
 #time{
     margin-right: 1.5vh;
     text-decoration: underline;
-    color: rgb(26, 25, 25);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .screen{
@@ -185,7 +178,7 @@ body{
     transform: translate(-50%, -50%);
     border: solid;
     height: 55vh;
-    width: 100vh;
+    width: 50vw;
     background-color: #424242ce;
     z-index: 3;
 }
@@ -194,7 +187,7 @@ body{
     padding: 30px;
     cursor: move;
     background-color: #050505ce;
-    color: rgba(255, 255, 255, 0.781);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 #warning-content{
@@ -220,7 +213,7 @@ body{
 
 .button{
     height: 10vh;
-    width: 30vh;
+    width: 15vw;
     position: relative;
     background-color: #2e2e2ece;
     border-color: transparent;
@@ -230,7 +223,7 @@ body{
 }
 
 .button:hover{
-    background-color: rgba(5, 5, 5, 0.637);
+    background-color: rgba(5, 5, 5, 0.6);
 }
 
 .apps{
@@ -247,19 +240,19 @@ body{
 }
 
 .program:hover{
-    background-color: rgba(34, 34, 34, 0.637);
+    background-color: rgba(34, 34, 34, 0.6);
 }
 
 .app{
     display: flex;
     flex-direction: column;
     height: 90vh;
-    width: 180vh;
+    width: 60vw;
     border: solid;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.781);
+    background-color: rgba(255, 255, 255, 0.8);
     overflow:auto;
-    scrollbar-color: rgb(26, 25, 25) rgba(190, 190, 190, 0.781);
+    scrollbar-color: rgb(26, 25, 25) rgba(190, 190, 190, 0.8);
     scrollbar-width: thin;
 }
 
@@ -267,10 +260,10 @@ body{
     padding: 20px;
     cursor: move;
     background-color: #050505ce;
-    color: rgba(255, 255, 255, 0.781);
+    color: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: row;
-    gap: 500px;
+    gap: 320px;
     align-items: center;
 }
 
@@ -310,8 +303,9 @@ body{
 
 .close{
     font-family: 'Pixelify Sans', sans-serif;
-    height: 20px;
-    width: 20px;
+    height: 7vh;
+    width: 3vw;
+    font-size: 2rem;
 }
 
 #cat-with-eyes-app{
@@ -334,7 +328,7 @@ body{
     border: solid;
     border-radius: 10px;
     border-color: rgb(26, 25, 25);
-    background-color: rgba(34, 33, 33, 0.295);
+    background-color: rgba(34, 33, 33, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -368,7 +362,7 @@ body{
     height: 5vh;
     width: 20vw;
     padding-left: 10px;
-    color: rgba(0, 0, 0);
+    color: black;
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 1rem;
     margin-right: 10px;
@@ -376,14 +370,14 @@ body{
 
 #send-btn{
     background: none;
-    border: thin solid rgba(255, 255, 255, 0.781);
+    border: thin solid rgba(255, 255, 255, 0.7);
     border-radius: 10px;
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 1rem;
 }
 
 #send-btn:hover{
-    background-color:rgba(0, 0, 0, 0.205); 
+    background-color:rgba(0, 0, 0, 0.2); 
 }
 
 .messages {
@@ -399,7 +393,7 @@ body{
     max-width: 70%;
     padding: 8px 12px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.3);
     word-wrap: break-word;
 }
 
@@ -407,6 +401,6 @@ body{
     max-width: 70%;
     padding: 8px 12px;
     border-radius: 10px;
-    background-color: rgba(29, 29, 29, 0.1);
+    background-color: rgba(29, 29, 29, 0.3);
     word-wrap: break-word;
 }
