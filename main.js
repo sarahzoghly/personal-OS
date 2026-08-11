@@ -31,7 +31,11 @@ close_btn.forEach(btn => {
 info_app.forEach(app => {
     app.addEventListener('click', () => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
-        document.querySelector("#app-content").innerHTML = `<p id="app-texttitle">Hi! That is the first version of my OS!</p> <p id="app-maintext">I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px">`;
+        document.querySelector("#app-content").innerHTML = `
+        <p id="app-texttitle">Hi! That is the first version of my OS!</p> 
+        <p id="app-maintext">It is called Basb<u>OS</u>a after my cat's Basbousa name (which was named afer that Egyptian dessert)</p>
+        <img src = "images/basbousa.png" alt = "basbousa-image" height="250px", width="250px">
+        <p id="app-maintext">I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px"> <a href="https://sarahzoghly.github.io/personal-website/" target="_blank">CLICK HERE TO KNOW MORE ABOUT ME!</a>`;
         document.querySelector("#headertext").innerHTML = `Info`
     });
 });
