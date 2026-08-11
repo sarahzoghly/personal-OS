@@ -40,8 +40,8 @@ body{
 
 .pupil {
     position: absolute;
-    width: 3vmin;
-    height: 10vmin;
+    width: 25px;
+    height: 65px;
     border-radius: 50%;
     background-image: linear-gradient(to top, rgb(17, 17, 17), rgb(0, 0, 0), rgb(0, 0, 0));
     border: thin solid;
@@ -114,12 +114,15 @@ body{
 }
 
 #cat{
+    display: flex;
     grid-area: 1 / 1;
     z-index: 2;
-    height: 23vh;
-    width: 10vw;
+    height: 150px;
+    width: 150px;
     justify-self: center;
     align-self: center;
+    justify-content: center;
+    align-content: center;
     border: solid;
     border-width: 5px;
     border-radius: 1000px;
@@ -127,6 +130,11 @@ body{
     border-color: rgb(24, 24, 24);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
     background-image: linear-gradient(rgb(32, 32, 32), rgb(29, 28, 28), rgb(0, 0, 0));
+}
+
+#cat_bg{
+    justify-self: center;
+    align-self: center;
 }
 
 #bg{
@@ -138,6 +146,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center; 
     position: absolute;
     width: 100%;
     height: 8vh;
@@ -149,10 +158,11 @@ body{
 #logout{
     border:rgba(255, 255, 255, 0.8);
     border-radius: 100px;
-    height: 6vh;
-    width: 3vw;
+    height: 35px;
+    width: 35px;
     margin: 1vh;
     background-color: rgba(5, 5, 5, 0.3);
+    display: flex;
 }
 
 #logout:hover{
@@ -161,6 +171,8 @@ body{
 
 #logout-img{
     margin: 1vh;
+    align-self: center;
+    justify-self: center;
 }
 
 #time{
@@ -243,8 +255,9 @@ body{
 }
 
 .program{
-    background-color: transparent;
+    background-color: rgba(155, 155, 155, 0.2);
     border-color: transparent;
+    border-radius: 10px;
     position: relative;
 }
 
@@ -282,6 +295,11 @@ body{
     font-size: 1.5rem;
 }
 
+.app{
+    height: 550px;
+    width: 1000px;
+}
+
 #app-content{
     flex: 1; 
     overflow-y: auto;
@@ -314,8 +332,8 @@ body{
 
 .close{
     font-family: 'Pixelify Sans', sans-serif;
-    height: 7vh;
-    width: 3vw;
+    height: 40px;
+    width: 40px;
     font-size: 2rem;
 }
 
