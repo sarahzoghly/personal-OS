@@ -40,8 +40,8 @@ body{
 
 .pupil {
     position: absolute;
-    width: 1.5vw;
-    height: 10vh;
+    width: 3vmin;
+    height: 10vmin;
     border-radius: 50%;
     background-image: linear-gradient(to top, rgb(17, 17, 17), rgb(0, 0, 0), rgb(0, 0, 0));
     border: thin solid;
@@ -105,6 +105,7 @@ body{
     position: relative;
 }
 
+
 #wallpaper{
     display: grid;
     z-index: 1;
@@ -116,9 +117,9 @@ body{
     grid-area: 1 / 1;
     z-index: 2;
     height: 23vh;
-    width:10vw;
-    margin: auto;  
-    margin-top: 40vh;
+    width: 10vw;
+    justify-self: center;
+    align-self: center;
     border: solid;
     border-width: 5px;
     border-radius: 1000px;
@@ -265,17 +266,19 @@ body{
 }
 
 #appheader{
+    position: relative;
     padding: 20px;
     cursor: move;
     background-color: #050505ce;
     color: rgba(255, 255, 255, 0.8);
     display: flex;
-    flex-direction: row;
-    gap: 320px;
     align-items: center;
 }
 
 #headertext{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 1.5rem;
 }
 
