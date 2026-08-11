@@ -10,11 +10,12 @@ body{
 }
 
 .welcome{
+    grid-template-columns: 1fr;
     display: grid;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(rgb(0, 0, 0), rgb(32, 32, 32), rgb(29, 28, 28), rgb(0, 0, 0));
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 1;
     grid-area: 1 / 1;
@@ -24,11 +25,17 @@ body{
     font-size: 4rem;
     color: rgba(255, 255, 255, 0.8);
     position: relative;
+    justify-self: center;
+    align-self: top;
+    grid-area: 1 / 1;
+    align-self: start;
 }
 
 #cat-with-eyes{
     position: relative;
-    left: 40vw;
+    justify-self: end;
+    margin-right: 10px;
+    grid-area: 1 / 1;
 }
 
 .pupil {
@@ -41,13 +48,14 @@ body{
 }
 
 #sign{
-    position: relative;
-    bottom: 35vh;
-    right: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    justify-self: start;
+    align-self: center;
+    grid-area: 1 / 1;
+    margin-left: 40px;
 }
 
 #pass-field{
