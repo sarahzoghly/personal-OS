@@ -2,17 +2,33 @@ const os_button = document.getElementById('enter-os');
 const logout_button = document.getElementById('logout');
 const btn1 = document.getElementById('warning-bt1');
 const btn2 = document.getElementById('warning-bt2');
+const close_btn = document.querySelectorAll('.close');
+const info_app = document.querySelectorAll('#welcome-app');
 let entered_os = false;
 let btn1_clicked = false;
 let btn2_clicked = false;
 let warning = "";
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
-document.querySelectorAll("#warning").forEach(section => section.style.display = "none")
+document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
+document.querySelectorAll(".app").forEach(section => section.style.display = "none");
 document.body.style.overflow = 'hidden';
 
 os_button.addEventListener('click', () => {
     entered_os = true;
     os();
+});
+
+close_btn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+    });
+});
+
+info_app.forEach(app => {
+    app.addEventListener('click', () => {
+        document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
+        document.querySelector("#app-content").innerHTML = `<p id="app-title"> Hi! That is the first version of my OS. I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px">`;
+    });
 });
 
 const pupils = [
@@ -40,7 +56,6 @@ logout_button.addEventListener('click', () => {
     document.querySelector("#warning-bt2").innerHTML = `No`;
     document.querySelectorAll("#warning").forEach(section => section.style.display = "block");
     warning = "logout";
-
 });
 
 
@@ -66,7 +81,9 @@ btn2.addEventListener('click', () => {
 });
 
 setInterval(updatetime, 1000);
+
 dragElement(document.getElementById("warning"));
+dragElement(document.getElementById("app"));
 
 function welcome(){
     document.querySelectorAll(".os").forEach(section => section.style.display = "none");
