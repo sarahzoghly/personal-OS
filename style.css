@@ -248,6 +248,8 @@ body{
 }
 
 .apps{
+    top: 8vh;
+    bottom: 0; 
     display: flex;
     flex-direction: column;
     align-items: center; 
