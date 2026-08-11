@@ -37,6 +37,7 @@ info_app.forEach(app => {
         <img src = "images/basbousa.png" alt = "basbousa-image" height="250px", width="250px">
         <p id="app-maintext">I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px"> <a href="https://sarahzoghly.github.io/personal-website/" target="_blank">CLICK HERE TO KNOW MORE ABOUT ME!</a>`;
         document.querySelector("#headertext").innerHTML = `Info`
+        document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
     });
 });
 
