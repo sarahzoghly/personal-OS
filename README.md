@@ -40,6 +40,9 @@ That is my personal OS that can be run on the web.
 
 - <a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Stockio - Flaticon</a>
 
-- <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Magnific - Flaticon</a>)
+- <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Magnific - Flaticon</a>
+
+- <a href="https://www.flaticon.com/free-icons/gaming" title="gaming icons">Gaming icons created by Cuputo - Flaticon</a>
+)
 
 
