@@ -270,8 +270,8 @@ body{
 .app{
     display: flex;
     flex-direction: column;
-    height: 90vh;
-    width: 60vw;
+    min-height: 90vh;
+    min-width: 60vw;
     border: solid;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
@@ -372,6 +372,7 @@ body{
     width: 70%;
     border: solid;
     margin-left: 20px;
+    margin-right: 10px;
     border-radius: 10px;
     border-color: rgb(26, 25, 25);
     background-color: rgba(34, 33, 33, 0.295);
@@ -434,4 +435,52 @@ body{
     border-radius: 10px;
     background-color: rgba(29, 29, 29, 0.3);
     word-wrap: break-word;
+}
+
+.drawapp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.canvas-container{
+    display: flex;
+    height: 100%;
+    width: 70%;
+    border: solid;
+    margin-right: 10px;
+    border-radius: 10px;
+    border-color: rgb(26, 25, 25);
+    background-color: rgba(247, 247, 247, 0.897);
+    flex-direction: column;
+}
+
+.drawing-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: auto;
+    padding: 10px;
+}
+
+.dr-btn{
+    background: rgb(119, 118, 118);
+    border: thin solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 1.2rem;
+    width: 100px;
+}
+
+.dr-btn:hover{
+    background-color:rgba(0, 0, 0, 0.7); 
+}
+
+#myCanvas {
+    border: 2px solid red;
 }

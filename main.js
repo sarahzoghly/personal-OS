@@ -4,6 +4,7 @@ const btn1 = document.getElementById('warning-bt1');
 const btn2 = document.getElementById('warning-bt2');
 const close_btn = document.querySelectorAll('.close');
 const info_app = document.querySelectorAll('#welcome-app');
+const drawapp = document.querySelectorAll('#drawapp-button');
 const catchat = document.querySelectorAll('#catchat');
 const cat = document.querySelectorAll('#cat-with-eyes-app');
 let entered_os = false;
@@ -12,9 +13,9 @@ let btn2_clicked = false;
 let warning = "";
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
 document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
-document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+//document.querySelectorAll(".app").forEach(section => section.style.display = "none");
 document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
-document.body.style.overflow = 'hidden';
+//document.body.style.overflow = 'hidden';
 
 os_button.addEventListener('click', () => {
     entered_os = true;
@@ -91,6 +92,40 @@ catchat.forEach(app => {
         });
     });
 });
+
+
+drawapp.forEach(app => {
+    app.addEventListener('click', () => {
+        document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
+        document.querySelector("#app-content").innerHTML = `
+        <div class="drawapp">
+            <div class="canvas-container">
+                <canvas id="myCanvas">
+                    Sorry, your browser doesn't support canvas technology.
+                </canvas>
+                <div class="drawing-buttons">
+                    <button id="next-btn" class="dr-btn">Next!</button>
+                    <button id="clear-btn" class="dr-btn">Clear</button>
+                    <button id="skip-btn" class="dr-btn">Skip</button>
+                </div>
+            </div>
+            <div id="right_side">
+                <button id="cat-with-eyes-app"><img src="images/cat_happy.gif" alt="image" height="250px" width="250px"></button>
+            </div>
+        </div>
+        `;
+        document.querySelector("#headertext").innerHTML = `CatDraw`;
+        document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
+
+        // NOW measure and size the canvas, since the app is visible at this point
+        const canvas = document.getElementById('myCanvas');
+        const container = document.querySelector('.canvas-container');
+        canvas.width = container.clientWidth;
+        canvas.height = container.clientHeight;
+    });
+});
+
+
 
 cat.forEach(catBtn => {
     catBtn.addEventListener('click', () => {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BasbOSa</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gameconsole.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -40,7 +41,6 @@
                 <button id="logout"> <img id="logout-img" src="images/exit.png" alt="logout" height="18px" width="18px"></button>
             </div>
             <p id="time">time</p>
-            <a href="game.html">Play the game</a>
         </div>
         <div class="screen">
             <div id="warning">
@@ -56,6 +56,8 @@
         <div class="apps" id="column1">
             <button id="welcome-app" class="program"><img src="images/info.png" height="50px"></button>
             <button id="catchat" class="program"><img src="images/chat-bubble.png" height="50px"></button>
+            <button id="gameconsole" class="program"><img src="images/game.png" height="50px"></button>
+            <button id="drawapp-button" class="program"><img src="images/draw.png" height="50px"></button>
         </div>
         <div class="app" id="app">
             <div id="appheader">
@@ -63,9 +65,26 @@
                 <p id="headertext"></p>
             </div>
             <div id="app-content">
+                <div class="drawapp">
+                    <div class="canvas-container">
+                        <canvas id="myCanvas" width="620px" height="320px">
+                            Sorry, your browser doesn't support canvas technology.
+                        </canvas>
+                        <div class="drawing-buttons">
+                            <button id="next-btn" class="dr-btn">Next!</button>
+                            <button id="clear-btn" class="dr-btn">Clear</button>
+                            <button id="skip-btn" class="dr-btn">Skip</button>
+                        </div>
+                    </div>
+                    <div id="right_side">
+                        <button id="cat-with-eyes-app"><img src="images/cat_happy.gif" alt="image" height="250px" width="250px"></button>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
 <script src="main.js"></script>
+<script src="gameconsole.js"></script>
 </body>
 </html>
