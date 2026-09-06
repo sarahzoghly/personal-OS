@@ -451,9 +451,9 @@ body{
 .canvas-container{
     display: flex;
     height: 100%;
-    width: 70%;
+    width: 97%;
     border: solid;
-    margin-right: 10px;
+    margin-right: 20px;
     border-radius: 10px;
     border-color: rgb(26, 25, 25);
     background-color: rgba(247, 247, 247, 0.897);
@@ -483,4 +483,11 @@ body{
 
 #myCanvas {
     border: 2px solid red;
+}
+
+.draw-column{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
 }

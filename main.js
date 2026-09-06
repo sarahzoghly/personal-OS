@@ -11,11 +11,12 @@ let entered_os = false;
 let btn1_clicked = false;
 let btn2_clicked = false;
 let warning = "";
+
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
 document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
-//document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+document.querySelectorAll(".app").forEach(section => section.style.display = "none");
 document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
-//document.body.style.overflow = 'hidden';
+document.body.style.overflow = 'hidden';
 
 os_button.addEventListener('click', () => {
     entered_os = true;
@@ -99,10 +100,12 @@ drawapp.forEach(app => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
         document.querySelector("#app-content").innerHTML = `
         <div class="drawapp">
-            <div class="canvas-container">
-                <canvas id="myCanvas">
-                    Sorry, your browser doesn't support canvas technology.
-                </canvas>
+            <div class="draw-column">
+                <div class="canvas-container">
+                    <canvas id="myCanvas">
+                        Sorry, your browser doesn't support canvas technology.
+                    </canvas>
+                </div>
                 <div class="drawing-buttons">
                     <button id="next-btn" class="dr-btn">Next!</button>
                     <button id="clear-btn" class="dr-btn">Clear</button>
@@ -117,11 +120,28 @@ drawapp.forEach(app => {
         document.querySelector("#headertext").innerHTML = `CatDraw`;
         document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
 
-        // NOW measure and size the canvas, since the app is visible at this point
         const canvas = document.getElementById('myCanvas');
         const container = document.querySelector('.canvas-container');
-        canvas.width = container.clientWidth;
-        canvas.height = container.clientHeight;
+
+        function resizeCanvas() {
+            var snapshot = canvas.toDataURL();
+
+            canvas.width = container.clientWidth;
+            canvas.height = container.clientHeight;
+
+            var ctx = canvas.getContext("2d");
+            ctx.lineWidth = 5;   // reapply, since resizing reset it
+
+            var img = new Image();
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = snapshot;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        drawing();
     });
 });
 
@@ -262,4 +282,39 @@ function send_message(message, container, bot){
         botmessage_el.textContent = bot;
         container.scrollTop = container.scrollHeight;
     }, 600);
+}
+
+
+
+function drawing() {
+    var myCanvas = document.getElementById("myCanvas");
+
+    if(myCanvas){
+        var isDown = false;
+        var ctx = myCanvas.getContext("2d");
+        var canvasX, canvasY;
+        var rect;
+        ctx.lineWidth = 5;
+
+        $(myCanvas).mousedown(function(e){
+            isDown = true;
+            rect = myCanvas.getBoundingClientRect();
+            ctx.beginPath();
+            canvasX = e.clientX - rect.left;
+            canvasY = e.clientY - rect.top;
+            ctx.moveTo(canvasX, canvasY);
+        }).mousemove(function(e){
+            if(isDown != false) {
+                canvasX = e.clientX - rect.left;
+                canvasY = e.clientY - rect.top;
+                ctx.lineTo(canvasX, canvasY);
+                ctx.strokeStyle = "black";
+                ctx.stroke();
+            }
+        })
+        .mouseup(function(e){
+            isDown = false;
+            ctx.closePath();
+        });
+    }
 }
