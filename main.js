@@ -7,6 +7,8 @@ const info_app = document.querySelectorAll('#welcome-app');
 const drawapp = document.querySelectorAll('#drawapp-button');
 const catchat = document.querySelectorAll('#catchat');
 const cat = document.querySelectorAll('#cat-with-eyes-app');
+const searchBtn = document.getElementById('search-btn');
+const searchInput = document.getElementById('search-input');
 let entered_os = false;
 let btn1_clicked = false;
 let btn2_clicked = false;
@@ -282,6 +284,23 @@ setInterval(updatetime, 1000);
 
 dragElement(document.getElementById("warning"));
 dragElement(document.getElementById("app"));
+
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const query = searchInput.value.trim();
+        if (query === '') return;
+        const url = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+        window.open(url, '_blank');
+    }
+});
+
+searchInput.addEventListener('focus', () => {
+    document.body.classList.add('search-focused');
+});
+
+searchInput.addEventListener('blur', () => {
+    document.body.classList.remove('search-focused');
+});
 
 function welcome(){
     document.querySelectorAll(".os").forEach(section => section.style.display = "none");

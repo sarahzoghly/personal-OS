@@ -137,6 +137,59 @@ body{
     align-self: center;
 }
 
+#search-bar{
+    display: flex;
+    grid-area: 1 / 1;
+    justify-self: center;
+    align-self: center;
+    transform: translateY(-140px);
+    z-index: 3;
+}
+
+#search-input{
+    height: 5vh;
+    width: 40vw;
+    border-radius: 10px;
+    border: thin solid rgba(255, 255, 255, 0.8);
+    padding-left: 10px;
+    font-size: 1rem;
+    background-color: rgb(26, 25, 25);
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+#search-bar{
+    transition: width 0.3s ease;
+}
+
+body.search-focused #search-bar{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px; /* however big you want it expanded */
+    justify-content: center;
+    align-items: center;
+}
+
+#bg, #cat, .bar, .screen{
+    transition: filter 0.3s ease;
+}
+
+body.search-focused #bg,
+body.search-focused #cat,
+body.search-focused .bar,
+body.search-focused .screen{
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+body.search-focused #warning,
+body.search-focused .apps,
+body.search-focused .app{
+    pointer-events: none;
+}
+
 #bg{
     grid-area: 1 / 1;
     z-index: 1;
@@ -190,6 +243,7 @@ body{
     grid-area: 1/1;
     background-color: transparent;
     padding: 70px;
+    pointer-events: none;
 }
 
 #warning{
@@ -202,6 +256,7 @@ body{
     width: 50vw;
     background-color: #424242ce;
     z-index: 3;
+    pointer-events: auto;
 }
 
 #warningheader{
@@ -254,6 +309,7 @@ body{
     flex-direction: column;
     align-items: center; 
     gap: 15px; 
+    pointer-events: auto;
 }
 
 .program{
@@ -278,6 +334,7 @@ body{
     overflow:auto;
     scrollbar-color: rgb(26, 25, 25) rgba(190, 190, 190, 0.8);
     scrollbar-width: thin;
+    pointer-events: auto;
 }
 
 #appheader{
