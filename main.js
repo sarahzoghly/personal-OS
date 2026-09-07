@@ -383,12 +383,11 @@ function drawing() {
             if(isDown != false) {
                 canvasX = e.clientX - rect.left;
                 canvasY = e.clientY - rect.top;
+                ctx.strokeStyle = eraseron ? "white" : curColor;
                 ctx.lineTo(canvasX, canvasY);
                 ctx.stroke();
                 hasDrawn = true;
                 already_checked = false;
-                ctx.strokeStyle = eraseron ? "white" : curColor;
-
             }
         })
         .mouseup(function(e){
