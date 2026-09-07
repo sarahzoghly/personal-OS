@@ -456,7 +456,7 @@ body{
     margin-right: 20px;
     border-radius: 10px;
     border-color: rgb(26, 25, 25);
-    background-color: rgba(247, 247, 247, 0.897);
+    background-color: rgb(255, 255, 255);
     flex-direction: column;
 }
 
@@ -474,7 +474,7 @@ body{
     border-radius: 10px;
     font-family: 'Pixelify Sans', sans-serif;
     font-size: 1.2rem;
-    width: 100px;
+    width: 120px;
 }
 
 .dr-btn:hover{
@@ -490,4 +490,20 @@ body{
     flex-direction: column;
     width: 70%;
     height: 100%;
+}
+
+#cat-comment{
+    min-height: 7%;
+    border: solid;
+    border-radius: 10px;
+    border-color: rgb(26, 25, 25);
+    background-color: rgba(63, 61, 61, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 5px;
 }

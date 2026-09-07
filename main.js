@@ -11,12 +11,18 @@ let entered_os = false;
 let btn1_clicked = false;
 let btn2_clicked = false;
 let warning = "";
+var hasDrawn = false;
+var already_checked = false;
+var eraseron = false;
+
 
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
 document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
 document.querySelectorAll(".app").forEach(section => section.style.display = "none");
 document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
 document.body.style.overflow = 'hidden';
+
+
 
 os_button.addEventListener('click', () => {
     entered_os = true;
@@ -107,13 +113,26 @@ drawapp.forEach(app => {
                     </canvas>
                 </div>
                 <div class="drawing-buttons">
-                    <button id="next-btn" class="dr-btn">Next!</button>
+                    <button id="guess-btn" class="dr-btn">Ask Basobousa</button>
                     <button id="clear-btn" class="dr-btn">Clear</button>
-                    <button id="skip-btn" class="dr-btn">Skip</button>
+                    <button id="eraser-btn" class="dr-btn">Eraser</button>
+
+                    <p>Color picker: <select id="selectColor">
+                    <option id="colBlack" value="black" selected="selected">Black</option>
+                    <option id="colRed" value="red">Red</option>
+                    <option id="colBlue" value="blue">Blue</option>
+                    <option id="colGreen" value="green">Green</option>
+                    <option id="colOrange" value="orange">Orange</option>
+                    <option id="colYellow" value="yellow">Yellow</option>
+                    </select>
+                    </p>
                 </div>
             </div>
-            <div id="right_side">
-                <button id="cat-with-eyes-app"><img src="images/cat_happy.gif" alt="image" height="250px" width="250px"></button>
+            <div id="cat-draw">
+                <div id="right_side">
+                    <button id="cat-with-eyes-app"><img src="images/cat_happy.gif" alt="image" height="250px" width="250px"></button>
+                </div>
+                <p id="cat-comment">Draw something!</p>
             </div>
         </div>
         `;
@@ -122,6 +141,8 @@ drawapp.forEach(app => {
 
         const canvas = document.getElementById('myCanvas');
         const container = document.querySelector('.canvas-container');
+        const catGuesses = ["...", "Meow~", "MEOW", "Meow Meow", "Meow", "wow.. I dunno", "that a feet?", "*sniff sniff*", "*side-eyes the drawing*", "that looks bad... sry", "I dunno what that is but it looks awesome!", "that looks cute!", "you really drew this??", "I think art isn't your thing..", "haha.. what is that?", "you can pick other colors!", "can I eat that?", "that looks cute!"];
+
 
         function resizeCanvas() {
             var snapshot = canvas.toDataURL();
@@ -130,7 +151,7 @@ drawapp.forEach(app => {
             canvas.height = container.clientHeight;
 
             var ctx = canvas.getContext("2d");
-            ctx.lineWidth = 5;   // reapply, since resizing reset it
+            ctx.lineWidth = 5;   
 
             var img = new Image();
             img.onload = function() {
@@ -142,6 +163,58 @@ drawapp.forEach(app => {
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
         drawing();
+        document.getElementById('guess-btn').addEventListener('click', function() {
+            if (!hasDrawn) {
+                document.getElementById('cat-comment').innerHTML = "Draw something first, silly!";
+                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                setTimeout(() => {
+                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                }, 1000);
+            }
+            else if (hasDrawn && !already_checked) {
+                const comment = catGuesses[Math.floor(Math.random() * catGuesses.length)];
+                document.getElementById('cat-comment').innerHTML = comment;
+                already_checked = true;
+                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                setTimeout(() => {
+                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                }, 1000);
+            }
+            else{
+                document.getElementById('cat-comment').innerHTML = "I saw this drawing before!";
+                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                setTimeout(() => {
+                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                }, 1000);
+            }
+        });
+        document.getElementById('clear-btn').addEventListener('click', function() {
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            hasDrawn = false;
+            already_checked = false;
+            document.getElementById('cat-comment').innerHTML = "Draw something!";
+        });
+        const eraserbtn = document.getElementById('eraser-btn');
+
+        eraserbtn.addEventListener('click', function() {
+            if (!eraseron) {
+                eraseron = true;
+                eraserbtn.textContent = 'Brush';
+                eraserbtn.style.backgroundColor = 'rgb(173, 170, 170)';
+            } else {
+                eraseron = false;
+                eraserbtn.textContent = 'Eraser';
+                eraserbtn.style.backgroundColor = 'rgb(119, 118, 118)';
+            }
+        });
+        const catBtn = document.getElementById('cat-with-eyes-app');
+        catBtn.addEventListener('click', () => {
+            catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+            setTimeout(() => {
+                catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+            }, 1000);
+        });
     });
 });
 
@@ -288,9 +361,12 @@ function send_message(message, container, bot){
 
 function drawing() {
     var myCanvas = document.getElementById("myCanvas");
+    var curColor = $('#selectColor option:selected').val();
 
     if(myCanvas){
         var isDown = false;
+
+
         var ctx = myCanvas.getContext("2d");
         var canvasX, canvasY;
         var rect;
@@ -308,8 +384,11 @@ function drawing() {
                 canvasX = e.clientX - rect.left;
                 canvasY = e.clientY - rect.top;
                 ctx.lineTo(canvasX, canvasY);
-                ctx.strokeStyle = "black";
                 ctx.stroke();
+                hasDrawn = true;
+                already_checked = false;
+                ctx.strokeStyle = eraseron ? "white" : curColor;
+
             }
         })
         .mouseup(function(e){
@@ -317,4 +396,10 @@ function drawing() {
             ctx.closePath();
         });
     }
+
+    $('#selectColor').change(function () {
+        curColor = $('#selectColor option:selected').val();
+    });
+
 }
+
