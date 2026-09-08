@@ -159,18 +159,25 @@ body{
 }
 
 #search-bar{
-    transition: width 0.3s ease;
+    position: fixed;
+    top: 50%;
+    left: calc(50% + 66px);
+    width: 250px;
+    margin-left: -200px;
+    transform: translateY(calc(-50% - 140px));
+    box-sizing: border-box;
+    display: flex;
+    transition: width 0.3s ease, margin-left 0.3s ease, transform 0.3s ease;
+    z-index: 3;
 }
 
 body.search-focused #search-bar{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px; /* however big you want it expanded */
-    justify-content: center;
-    align-items: center;
+    width: 1000px;
+    margin-left: -330px;
+    transform: translateY(-50%);
 }
+
+
 
 #bg, #cat, .bar, .screen{
     transition: filter 0.3s ease;
@@ -206,6 +213,7 @@ body.search-focused .app{
     backdrop-filter: blur(10px);
     background-color: rgba(116, 116, 116, 0.2);
     z-index: 4;
+    pointer-events: none;
 }
 
 #logout{
@@ -216,6 +224,8 @@ body.search-focused .app{
     margin: 1vh;
     background-color: rgba(5, 5, 5, 0.3);
     display: flex;
+    pointer-events: auto;
+
 }
 
 #logout:hover{
