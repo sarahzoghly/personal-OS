@@ -601,8 +601,6 @@ body.search-focused .app{
 }
 
 #weather-icon{
-    width: 100px;
-    height: 100px;
     margin-bottom: 10px;
     justify-self: flex-start;
     align-self: flex-start;
