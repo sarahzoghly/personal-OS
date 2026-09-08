@@ -197,6 +197,8 @@ body.search-focused .app{
     pointer-events: none;
 }
 
+
+
 #bg{
     grid-area: 1 / 1;
     z-index: 1;
@@ -573,4 +575,43 @@ body.search-focused .app{
     text-align: center;
     font-size: 1.3rem;
     padding: 5px;
+}
+
+.screen-stuff{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+#weather-widget{
+    display: flex;
+    flex-direction: row;
+    padding: 50px;
+    border: thin solid rgba(255, 255, 255, 0.8);
+    background-color: #1f1e1e;
+    text-align: center;
+    height: 20vh;
+    width: 20vw;
+    border-radius: 100px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#weather-icon{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
+#weather-info{
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    justify-self: flex-start;
+    margin-right: 30px;
 }
