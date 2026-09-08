@@ -519,7 +519,35 @@ function loadWeather() {
     });
 }
 
+const quotes = [
+    "Basbousa approves of this message",
+    "Cats are awesome, but Basbousa is the best",
+    "Meow meow meow",
+    "Basbousa is watching",
+    "Follow @sarahzoghly on Instagram!",
+    "Meow meow meow meow meow meow, mow meow; meow meow 'MEOW' m e o w. Meow meow meow, meow!",
+    "Basbousa is sweet. Literally.",
+    "Basbousa is a good girl",
+    "Open an app and pet Basbousa!",
+    "Try to make basbousa at home! (the dessert, not the cat)",
+    "Search rosoom.uk to check my future animation studio!",
+    "'Meow' -Basbousa"
+];
+
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
+function loadTicker() {
+    const shuffled = shuffle([...quotes]);
+    const combined = shuffled.join("\u00A0\u00A0\u00A0\u00A0\u00A0•\u00A0\u00A0\u00A0\u00A0\u00A0");    document.getElementById('ticker-text-1').textContent = combined;
+    document.getElementById('ticker-text-2').textContent = combined;
+}
 
 
 
 loadWeather();
+loadTicker();
+
+
+

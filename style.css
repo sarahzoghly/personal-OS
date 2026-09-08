@@ -613,3 +613,33 @@ body.search-focused .app{
     justify-self: flex-start;
     margin-right: 30px;
 }
+
+#ticker-container {
+    color: rgba(255, 255, 255, 0.8);
+    overflow: hidden;
+    border: thin solid rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    height: 5vh;
+    align-content: center;
+    display: flex;
+    white-space: nowrap;
+    flex: 1;
+    margin: 0 20px;
+
+}
+
+#ticker-track{
+    display: inline-flex;
+    animation: ticker-scroll 60s linear infinite;
+    align-items: center;
+}
+
+.ticker-copy{
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes ticker-scroll{
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
