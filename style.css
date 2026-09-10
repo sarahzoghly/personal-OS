@@ -578,10 +578,6 @@ body.search-focused .app{
     background-color:rgba(0, 0, 0, 0.7); 
 }
 
-#myCanvas {
-    border: 2px solid red;
-}
-
 .draw-column{
     display: flex;
     flex-direction: column;

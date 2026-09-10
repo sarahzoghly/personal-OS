@@ -412,7 +412,7 @@ function drawing() {
                 already_checked = false;
             }
         })
-        .mouseup(function(e){
+        $(document).mouseup(function(e){
             isDown = false;
             ctx.closePath();
         });
