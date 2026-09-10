@@ -6,6 +6,7 @@ const gameconsole_btn = document.querySelectorAll('#gameconsole');
 gameconsole_btn.forEach(app => {
     app.addEventListener('click', () => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
+        document.querySelectorAll(".side-window").forEach(section => section.style.display = "flex");
         document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
         document.querySelector("#headertext").innerHTML = `Cactus (Demo)`;
 

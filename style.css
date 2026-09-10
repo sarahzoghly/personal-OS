@@ -338,8 +338,6 @@ body.search-focused .app{
 .app{
     display: flex;
     flex-direction: column;
-    min-height: 90vh;
-    min-width: 60vw;
     border: solid;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.8);
@@ -347,6 +345,23 @@ body.search-focused .app{
     scrollbar-color: rgb(26, 25, 25) rgba(190, 190, 190, 0.8);
     scrollbar-width: thin;
     pointer-events: auto;
+    height: 550px;
+    width: 1000px;
+}
+
+.side-window{
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow:auto;
+    scrollbar-color: rgb(26, 25, 25) rgba(190, 190, 190, 0.8);
+    scrollbar-width: thin;
+    pointer-events: auto;
+    height: 400px;
+    width: 350px;
+    z-index: 10;
 }
 
 #appheader{
@@ -359,6 +374,23 @@ body.search-focused .app{
     align-items: center;
 }
 
+#gamer-cat-header{
+    position: relative;
+    padding: 20px;
+    cursor: move;
+    background-color: #050505ce;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+}
+
+#gc-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 #headertext{
     position: absolute;
     left: 50%;
@@ -366,10 +398,6 @@ body.search-focused .app{
     font-size: 1.5rem;
 }
 
-.app{
-    height: 550px;
-    width: 1000px;
-}
 
 #app-content{
     flex: 1; 

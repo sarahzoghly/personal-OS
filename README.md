@@ -52,6 +52,8 @@ That is my personal OS that can be run on the web.
 
 - <a href="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGF5Mm0yNW13ZWtuM3g4dzdxeWg5eTFuNHZzdW1sdHVtYWcweml6MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/CabrEieTaTD5HdRDRM/giphy.gif" title="sun gif">Sun gif created by @LaPageDeCam - Giffy</a>
 
+- <a href="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzd5aDYwYTZyd2h1anpwMXlsaG05eHFvY2N6cmFtMHR6MzFpYWl0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/20KOWrJlAGHb9bDhXf/giphy.gif" title="moon sticker">Moon sticker created by @annasketchy - Giffy</a>
+
 - <a href="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnR5ZjEwZXlxa2s1cnpmNGRhcXdnYmdxNnoydnk2ZzV6czZqOGlxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/09MsSFGDZvKOki1kxY/giphy.gif" title="raining sticker">Rain sticker created by @truecuckoo - Giffy</a>
 
 - <a href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmhpMnZheXI2ZzkybzcyMTkzMzZpZGR2dWxhYmprd216azNscndzMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/LsxB3BtSbnHNhijy6K/giphy.gif" title="cloudy sticker">Clouds sticker created by @catsmartmarketing - Giffy</a>

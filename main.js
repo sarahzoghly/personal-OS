@@ -21,6 +21,7 @@ var eraseron = false;
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
 document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
 document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+document.querySelectorAll(".side-window").forEach(section => section.style.display = "none");
 document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
 document.body.style.overflow = 'hidden';
 
@@ -34,6 +35,7 @@ os_button.addEventListener('click', () => {
 close_btn.forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "none");
+        document.querySelectorAll(".side-window").forEach(section => section.style.display = "none");
         document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
     });
 });
@@ -143,7 +145,7 @@ drawapp.forEach(app => {
 
         const canvas = document.getElementById('myCanvas');
         const container = document.querySelector('.canvas-container');
-        const catGuesses = ["...", "Meow~", "MEOW", "Meow Meow", "Meow", "wow.. I dunno", "that a feet?", "*sniff sniff*", "*side-eyes the drawing*", "that looks bad... sry", "I dunno what that is but it looks awesome!", "that looks cute!", "you really drew this??", "I think art isn't your thing..", "haha.. what is that?", "you can pick other colors!", "can I eat that?", "that looks cute!"];
+        const catGuesses = ["...", "Meow~", "MEOW", "Meow Meow", "Meow", "wow.. I dunno", "that food?", "*sniff sniff*", "*side-eyes the drawing*", "that looks bad... sry", "I dunno what that is but it looks awesome!", "that looks cute!", "you really drew this??", "I think art isn't your thing..", "haha.. what is that?", "you can pick other colors!", "can I eat that?", "that looks cute!"];
 
 
         function resizeCanvas() {
@@ -284,6 +286,7 @@ setInterval(updatetime, 1000);
 
 dragElement(document.getElementById("warning"));
 dragElement(document.getElementById("app"));
+dragElement(document.getElementById("gamer-cat"));
 
 searchInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -427,14 +430,18 @@ function loadWeather() {
         const lon = position.coords.longitude;
 
         const response = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&daily=sunrise,sunset&timezone=auto`
         );
-
         const data = await response.json();
 
         const temp = data.current_weather.temperature;
 
-        // Open-Meteo uses "weathercode" here
+        const sunrise = new Date(data.daily.sunrise[0]);
+        const sunset = new Date(data.daily.sunset[0]);
+        const now = new Date();
+
+        const isDay = now >= sunrise && now < sunset;
+
         const code = data.current_weather.weathercode;
 
         const weatherCodeMap = {
@@ -496,9 +503,13 @@ function loadWeather() {
 
             weatherIcon.src = "images/raining.webp";
 
-        } else if (code === 0) {
+        } else if (code === 0 && isDay) {
 
             weatherIcon.src = "images/sunny.gif";
+
+        } else if (code === 0 && !isDay) {
+            
+            weatherIcon.src = "images/moon.gif";
 
         } else if (code === 1 || code === 2 || code === 3) {
 
@@ -539,8 +550,11 @@ function shuffle(array) {
 }
 
 function loadTicker() {
+    const separator = "\u00A0\u00A0\u00A0\u00A0\u00A0•\u00A0\u00A0\u00A0\u00A0\u00A0";
     const shuffled = shuffle([...quotes]);
-    const combined = shuffled.join("\u00A0\u00A0\u00A0\u00A0\u00A0•\u00A0\u00A0\u00A0\u00A0\u00A0");    document.getElementById('ticker-text-1').textContent = combined;
+    const combined = shuffled.join(separator) + separator; // trailing separator too
+
+    document.getElementById('ticker-text-1').textContent = combined;
     document.getElementById('ticker-text-2').textContent = combined;
 }
 
