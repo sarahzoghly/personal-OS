@@ -6,15 +6,15 @@ That is my personal OS that can be run on the web.
   <img width="800" height="357" alt="cat" src="https://github.com/user-attachments/assets/c084431d-54bf-4e08-a31c-4cddcb173899" />
   <p></p>
   <a href="https://sarahzoghly.github.io/personal-OS/" target="_blank">CLICK HERE TO TRY IT OUT!</a>
-</div>
 
 ## To Try It:
 
-- Just click on the link above!
+- Just click on the link above and allow access to your location(for the weather widget)!
+
 
 ## Features:
 
-- Cat with moving eyes
+- Cat with moving eyes that follow the cursor
 
 - No password
 
@@ -25,6 +25,20 @@ That is my personal OS that can be run on the web.
 - Logout button (with a confirm pop-up)
 
 - Simple chatbot
+
+- Drawing app (with an 'ask Basbousa' option)
+
+- Game (Cactus demo)
+
+- Ticker
+
+- Weather widget (uses location)
+
+- Web search bar
+
+- Basbousa in every app
+
+- Different styles for Basbousa depending on the app
 
 ## Credits:
 

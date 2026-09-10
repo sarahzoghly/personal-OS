@@ -44,10 +44,10 @@ info_app.forEach(app => {
     app.addEventListener('click', () => {
         document.querySelectorAll(".app").forEach(section => section.style.display = "flex");
         document.querySelector("#app-content").innerHTML = `
-        <p id="app-texttitle">Hi! That is the first version of my OS!</p> 
+        <p id="app-texttitle">Hi! That is the second version of my OS!</p> 
         <p id="app-maintext">It is called Basb<u>OS</u>a after my cat's Basbousa name (which was named afer that Egyptian dessert)</p>
         <img src = "images/basbousa.png" alt = "basbousa-image" height="250px", width="250px">
-        <p id="app-maintext">I will still work more on it. Have fun around! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px"> <a href="https://sarahzoghly.github.io/personal-website/" target="_blank">CLICK HERE TO KNOW MORE ABOUT ME!</a>`;
+        <p id="app-maintext">It has a lot of fun apps like this cool info app (very cool), CatChat to chat with Basbousa, a game (couldn't put the full game as it is made with Pygame, you can try it from <a href="https://sarahzoghly.itch.io/cactus" target="_blank">here</a>!), and CatDraw which is a simple drawing app where you can ask Basbousa of her opinion about your art! There are also a weather widget that shows the weather according to your location, time and date display, a ticker with cool qoutes, and a search bar for the web. Have fun exploring BasbOSa! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px"> <a href="https://sarahzoghly.github.io/personal-website/" target="_blank">CLICK HERE TO KNOW MORE ABOUT ME!</a>`;
         document.querySelector("#headertext").innerHTML = `Info`
         document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
     });
