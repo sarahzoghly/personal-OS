@@ -45,6 +45,8 @@ That is my personal OS that can be run on the web.
 
 - w3schools for CSS and HTML stuff </p>
 
+- Basbousa assets --> me!
+
 - <a href= "https://jams.hackclub.com/batch/webOS/part-1/" target="_blank">Hackclub webOS guide</a>
 
 - Icons: 
