@@ -47,8 +47,7 @@ info_app.forEach(app => {
         <p id="app-texttitle">Hi! That is the second version of my OS!</p> 
         <p id="app-maintext">It is called Basb<u>OS</u>a after my cat's Basbousa name (which was named afer that Egyptian dessert)</p>
         <img src = "images/basbousa.png" alt = "basbousa-image" height="250px", width="250px">
-        <p id="app-maintext">It has a lot of fun apps like this cool info app (very cool), CatChat to chat with Basbousa, a game (couldn't put the full game as it is made with Pygame, you can try it from <a href="https://sarahzoghly.itch.io/cactus" target="_blank">here</a>!), and CatDraw which is a simple drawing app where you can ask Basbousa of her opinion about your art! There are also a weather widget that shows the weather according to your location, time and date display, a ticker with cool qoutes, and a search bar for the web. Have fun exploring BasbOSa! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px"> <a href="https://sarahzoghly.github.io/personal-website/" target="_blank">CLICK HERE TO KNOW MORE ABOUT ME!</a>`;
-        document.querySelector("#headertext").innerHTML = `Info`
+        <p id="app-maintext">It has a lot of fun apps like this cool info app (very cool), CatChat to chat with Basbousa, a game (couldn't put the full game as it is made with Pygame; you can try it from <a href="https://sarahzoghly.itch.io/cactus" target="_blank">here</a>!), and CatDraw, which is a simple drawing app where you can ask Basbousa for her opinion about your art! It also has a weather widget that shows the weather for your location, a time and date display, a ticker, and a web search bar. Have fun exploring BasbOSa! </p> <br> <img src = "images/cat.gif" alt = "image" height="250px", width="250px"> <a href="https://sarahzoghly.github.io/personal-website/" target="_blank">CLICK HERE TO KNOW MORE ABOUT ME!</a>`;        document.querySelector("#headertext").innerHTML = `Info`
         document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "none");
     });
 });
@@ -134,7 +133,7 @@ drawapp.forEach(app => {
             </div>
             <div id="cat-draw">
                 <div id="right_side">
-                    <button id="cat-with-eyes-app"><img src="images/cat_happy.gif" alt="image" height="250px" width="250px"></button>
+                    <button id="cat-with-eyes-app"><img src="images/artist-cat.gif" alt="image" height="250px" width="250px"></button>
                 </div>
                 <p id="cat-comment">Draw something!</p>
             </div>
@@ -214,9 +213,9 @@ drawapp.forEach(app => {
         });
         const catBtn = document.getElementById('cat-with-eyes-app');
         catBtn.addEventListener('click', () => {
-            catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+            catBtn.innerHTML = `<img src="images/cartf1-hppy.png" alt="image" height="250px" width="250px">`;
             setTimeout(() => {
-                catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                catBtn.innerHTML = `<img src="images/artist-cat.gif" alt="image" height="250px" width="250px">`;
             }, 1000);
         });
     });
@@ -532,7 +531,7 @@ function loadWeather() {
 
 const quotes = [
     "Basbousa approves of this message",
-    "Cats are awesome, but Basbousa is the best",
+    "Cats are awesome",
     "Meow meow meow",
     "Basbousa is watching",
     "Follow @sarahzoghly on Instagram!",
