@@ -169,25 +169,25 @@ drawapp.forEach(app => {
         document.getElementById('guess-btn').addEventListener('click', function() {
             if (!hasDrawn) {
                 document.getElementById('cat-comment').innerHTML = "Draw something first, silly!";
-                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                catBtn.innerHTML = `<img src="images/cartf1-hppy.png" alt="image" height="250px" width="250px">`;
                 setTimeout(() => {
-                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                    catBtn.innerHTML = `<img src="images/artist-cat.gif" alt="image" height="250px" width="250px">`;
                 }, 1000);
             }
             else if (hasDrawn && !already_checked) {
                 const comment = catGuesses[Math.floor(Math.random() * catGuesses.length)];
                 document.getElementById('cat-comment').innerHTML = comment;
                 already_checked = true;
-                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                catBtn.innerHTML = `<img src="images/cartf1-hppy.png" alt="image" height="250px" width="250px">`;
                 setTimeout(() => {
-                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                    catBtn.innerHTML = `<img src="images/artist-cat.gif" alt="image" height="250px" width="250px">`;
                 }, 1000);
             }
             else{
                 document.getElementById('cat-comment').innerHTML = "I saw this drawing before!";
-                catBtn.innerHTML = `<img src="images/cf1-hppy.png" alt="image" height="250px" width="250px">`;
+                catBtn.innerHTML = `<img src="images/cartf1-hppy.png" alt="image" height="250px" width="250px">`;
                 setTimeout(() => {
-                    catBtn.innerHTML = `<img src="images/cat_happy.gif" alt="image" height="250px" width="250px">`;
+                    catBtn.innerHTML = `<img src="images/artist-cat.gif" alt="image" height="250px" width="250px">`;
                 }, 1000);
             }
         });

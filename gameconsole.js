@@ -26,9 +26,9 @@ gameconsole_btn.forEach(app => {
         `;
         const catBtn = document.getElementById('cat-with-eyes-app');
         catBtn.addEventListener('click', () => {
-            catBtn.innerHTML = `<img src="images/cgamf1-hppy.png" alt="image" height="250px" width="250px">`;
+            catBtn.innerHTML = `<img src="images/cgamf1-hppy.png" alt="image" height="300px" width="300px">`;
             setTimeout(() => {
-                catBtn.innerHTML = `<img src="images/gamer-cat.gif" alt="image" height="250px" width="250px">`;
+                catBtn.innerHTML = `<img src="images/gamer-cat.gif" alt="image" height="300px" width="300px">`;
             }, 1000);
         });
 
