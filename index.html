@@ -43,18 +43,6 @@
             </div>
 
         </div>
-        <div class="bar">
-            <div id="logout_div">
-                <button id="logout"> <img id="logout-img" src="images/exit.png" alt="logout" height="18px" width="18px"></button>
-            </div>
-            <div id="ticker-container">
-                <div id="ticker-track">
-                    <span class="ticker-copy" id="ticker-text-1"></span>
-                    <span class="ticker-copy" id="ticker-text-2"></span>
-                </div>
-            </div>
-            <p id="time">time</p>
-        </div>
         <div class="screen">
             <div id="warning">
                 <div id="warningheader"></div>
@@ -66,42 +54,56 @@
                     </div>
                 </div>
             </div>
-        <div class="screen-stuff">
-            <div class="apps" id="column1">
-                <button id="welcome-app" class="program"><img src="images/info.png" height="50px"></button>
-                <button id="catchat" class="program"><img src="images/chat-bubble.png" height="50px"></button>
-                <button id="gameconsole" class="program"><img src="images/game.png" height="50px"></button>
-                <button id="drawapp-button" class="program"><img src="images/draw.png" height="50px"></button>
+            <div class="bar">
+                <div id="logout_div">
+                    <button id="logout"> <img id="logout-img" src="images/exit.png" alt="logout" height="18px" width="18px"></button>
+                </div>
+                <div id="ticker-container">
+                    <div id="ticker-track">
+                        <span class="ticker-copy" id="ticker-text-1"></span>
+                        <span class="ticker-copy" id="ticker-text-2"></span>
+                    </div>
+                </div>
+                <p id="time">time</p>
             </div>
 
-            <div id="weather-widget">
-                <div id="weather-icon">
-                    <img src="images/loading.gif" alt="weather icon" height="50px" width="50px">
+            <div class="screen-stuff">
+                <div class="apps" id="column1">
+                    <button id="welcome-app" class="program"><img src="images/info.png" height="50px"></button>
+                    <button id="catchat" class="program"><img src="images/chat-bubble.png" height="50px"></button>
+                    <button id="gameconsole" class="program"><img src="images/game.png" height="50px"></button>
+                    <button id="drawapp-button" class="program"><img src="images/draw.png" height="50px"></button>
                 </div>
-                <div id="weather-info">
-                    <p id="temperature">loading...</p>
-                    <p id="condition">loading...</p>
+
+                <div id="weather-widget">
+                    <div id="weather-icon">
+                        <img src="images/loading.gif" alt="weather icon" height="50px" width="50px">
+                    </div>
+                    <div id="weather-info">
+                        <p id="temperature">loading...</p>
+                        <p id="condition">loading...</p>
+                    </div>
                 </div>
             </div>
+            <div class="app" id="app">
+                <div id="appheader">
+                    <button class="close">X</button>
+                    <p id="headertext"></p>
+                </div>
+                <div id="app-content">
+                </div>
+                </div>
+            </div>
+                <div class="side-window" id="gamer-cat">
+                    <div id="gamer-cat-header">
+                    </div>
+                    <div id="gc-content">
+                        <button id="cat-with-eyes-app">
+                            <img src="images/gamer-cat.gif" alt="gamer cat" height="300px" width="300px">
+                        </button>
+                    </div>
+                </div>
         </div>
-        <div class="app" id="app">
-            <div id="appheader">
-                <button class="close">X</button>
-                <p id="headertext"></p>
-            </div>
-            <div id="app-content">
-            </div>
-            </div>
-        </div>
-            <div class="side-window" id="gamer-cat">
-                <div id="gamer-cat-header">
-                </div>
-                <div id="gc-content">
-                    <button id="cat-with-eyes-app">
-                        <img src="images/gamer-cat.gif" alt="gamer cat" height="300px" width="300px">
-                    </button>
-                </div>
-            </div>
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
