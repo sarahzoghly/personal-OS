@@ -29,6 +29,13 @@ document.body.style.overflow = 'hidden';
 
 os_button.addEventListener('click', () => {
     entered_os = true;
+    const el = document.documentElement;
+    if (el.requestFullscreen) {
+        el.requestFullscreen();
+    } 
+    else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+    }
     os();
 });
 
@@ -268,6 +275,12 @@ btn1.addEventListener('click', () => {
             welcome();
             entered_os = false;
             document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } 
+            else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
         }
     }
 });
