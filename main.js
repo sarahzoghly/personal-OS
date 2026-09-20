@@ -13,13 +13,14 @@ let entered_os = false;
 let btn1_clicked = false;
 let btn2_clicked = false;
 let warning = "";
+let warning_count = 0;
 var hasDrawn = false;
 var already_checked = false;
 var eraseron = false;
 
 
 document.querySelectorAll(".os").forEach(section => section.style.display = "none");
-document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
+document.querySelectorAll(".warning").forEach(section => section.style.display = "none");
 document.querySelectorAll(".app").forEach(section => section.style.display = "none");
 document.querySelectorAll(".side-window").forEach(section => section.style.display = "none");
 document.querySelectorAll("#cat_bg").forEach(section => section.style.display = "block");
@@ -259,10 +260,10 @@ document.addEventListener('mousemove', (e) => {
 });
 
 logout_button.addEventListener('click', () => {
-    document.querySelector("#warning-text").innerHTML = `ARE YOU SURE?`;
+    document.querySelector(".warning-text").innerHTML = `ARE YOU SURE?`;
     document.querySelector("#warning-bt1").innerHTML = `Yes, logout`;
     document.querySelector("#warning-bt2").innerHTML = `No`;
-    document.querySelectorAll("#warning").forEach(section => section.style.display = "block");
+    document.querySelectorAll(".warning").forEach(section => section.style.display = "block");
     warning = "logout";
 });
 
@@ -274,7 +275,7 @@ btn1.addEventListener('click', () => {
         if (btn1_clicked){
             welcome();
             entered_os = false;
-            document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
+            document.querySelectorAll(".warning").forEach(section => section.style.display = "none");
             if (document.exitFullscreen) {
                 document.exitFullscreen();
             } 
@@ -283,13 +284,25 @@ btn1.addEventListener('click', () => {
             }
         }
     }
+    else if (warning == "no_location"){
+        if (btn1_clicked){
+            document.querySelectorAll(".warning").forEach(section => section.style.display = "none");
+            warning = "";
+        }
+    }
 });
 
 btn2.addEventListener('click', () => {
     btn2_clicked = true;
     if (warning == "logout"){
         if (btn2_clicked){
-            document.querySelectorAll("#warning").forEach(section => section.style.display = "none");
+            document.querySelectorAll(".warning").forEach(section => section.style.display = "none");
+        }
+    }
+    else if (warning == "no_location"){
+        if (btn2_clicked){
+            document.querySelectorAll(".warning").forEach(section => section.style.display = "none");
+            warning = "";
         }
     }
 });
@@ -539,6 +552,12 @@ function loadWeather() {
     }, (error) => {
         document.getElementById('temperature').textContent = "something°C";
         document.getElementById('condition').textContent = "Couldn't get weather";
+        warning = "no_location";
+        warning_count += 1;
+        document.querySelector(".warning-text").innerHTML = `Your location access is blocked. That way the weather widget won't work :(`;
+        document.querySelector("#warning-bt1").innerHTML = `I will turn it on :D`;
+        document.querySelector("#warning-bt2").innerHTML = `I am ok >:(`;
+        document.querySelectorAll(".warning").forEach(section => section.style.display = "block");
     });
 }
 
@@ -570,7 +589,32 @@ function loadTicker() {
     document.getElementById('ticker-text-2').textContent = combined;
 }
 
-
+function displayWarning(){
+    if (warning_count == 1){
+        document.querySelector(".warning").innerHTML = 
+        `<div class="warningheader" id="warningheader"></div>
+            <div class="warning-content">
+            <p class="warning-text"></p>
+            <div class="warning-buttons">
+                <button id="warning-bt1-logout" class="button"></button>
+                <button id="warning-bt2-logout" class="button"></button>
+            </div>
+        </div>`
+    }
+    else{
+        document.querySelector('.warning').insertAdjacentHTML('beforeend', `
+            <div class="warning" id="warning2">
+                <div class="warningheader" id="warningheader"></div>
+                <div class="warning-content">
+                    <p class="warning-text"></p>
+                    <div class="warning-buttons">
+                        <button id="warning-bt1" class="button"></button>
+                        <button id="warning-bt2" class="button"></button>
+                    </div>
+                </div>
+            </div>
+            `)}
+    }
 
 loadWeather();
 loadTicker();
