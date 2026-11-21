@@ -240,25 +240,6 @@ cat.forEach(catBtn => {
     });
 });
 
-const pupils = [
-    { el: document.getElementById('pupil-left'), baseX: 90, baseY: 120},
-    { el: document.getElementById('pupil-right'), baseX: 145, baseY: 120}
-];
-const maxDist = 10;
-
-document.addEventListener('mousemove', (e) => {
-    const catRect = document.getElementById('cat-with-eyes').getBoundingClientRect();
-    pupils.forEach(p => {
-        const eyeX = catRect.left + p.baseX;
-        const eyeY = catRect.top + p.baseY;
-        const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
-        const dx = Math.cos(angle) * maxDist;
-        const dy = Math.sin(angle) * maxDist;
-        p.el.style.left = (p.baseX + dx) + 'px';
-        p.el.style.top = (p.baseY + dy) + 'px';
-    });
-});
-
 logout_button.addEventListener('click', () => {
     document.querySelector(".warning-text").innerHTML = `ARE YOU SURE?`;
     document.querySelector("#warning-bt1").innerHTML = `Yes, logout`;
