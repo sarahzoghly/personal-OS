@@ -3,7 +3,6 @@
 That is my personal OS that can be run on the web.
 
 <div align="center">
-  <img width="800" height="356" alt="basoba" src="https://github.com/user-attachments/assets/846bde5c-c594-49db-88c2-0b7723243fdb" />
   <p></p>
   <a href="https://sarahzoghly.github.io/personal-OS/" target="_blank">CLICK HERE TO TRY IT OUT!</a>
 </div>
